@@ -1,5 +1,5 @@
 # Coursework
-Projects done during BU Certificate Program
+Projects from BU Certificate Program
 
 CS601 [Front-End]: Web Application Development (HTML, CSS, Javascript, jQuery)
 
