@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 768px)" href="css/smallScreen.css"/>
+    <link rel="stylesheet" type="text/css" media="screen and (min-width:768px) and (max-width: 992px)" href="css/mediumScreen.css"/>
+    <link rel="stylesheet" type="text/css"  media="screen and (min-width: 992px)" href="css/largeScreen.css"/>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row" id="diceTitle">
+        <h6>Dice Game Online</h6>    
+    </div>
+    <div class="row justify-content-center" id="middleBackground">
+        <div class="col-lg-2" id="players">
+            <div id="players-content">
+                <h3>Players</h3>
+                <div id="players-display">
+                    <div id="no-players-text">No Players Added</div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="container-fluid col-lg-6" id="middle-content">
+            <div class="row justify-content-center" id="diceButtonContainer">                            
+                <!-- Game Buttons -->
+                <div class="sideContainer col-2 col-lg-2" id="buttonContainer">
+                    <div class="buttons" id="start-buttons">
+                        <form id="player-form">
+                            <input type="text" id="username" name="username" placeholder="Name" maxlength="10" autocomplete="off">
+                            <input type="submit" id="addPlayer" value="Add Player">
+                            <input type="submit" id="startGame" value="Start Game" onclick="return false">
+                        </form>
+                    </div>
+                    <div class="buttons" id="game-buttons">
+                        <h4 id="turn-tracker"><u>Turn:</u> Player</h4>
+                        <input type="submit" id="roll-button" value="Roll Dice">
+                        <input type="submit" id="end-button" value="Bank / End Turn">
+                    </div>
+                </div>
+
+                <!-- Game Interface -->
+                
+                <div class="col-7 col-lg-7" id="woodenTable">
+                    <div id="diceContainer">
+                        <div class="dice-row" id="row1">
+                            <div class="rolledDice" id="playdice0"><img src="./images/dice1.png"></div>
+                            <div class="rolledDice" id="playdice1"><img src="./images/dice1.png"></div>
+                            <div class="rolledDice" id="playdice2"><img src="./images/dice1.png"></div>
+                        </div>
+                        <div class="dice-row" id="row2">
+                            <div class="rolledDice" id="playdice3"><img src="./images/dice1.png"></div>
+                            <div class="rolledDice" id="playdice4"><img src="./images/dice1.png"></div>
+                            <div class="rolledDice" id="playdice5"><img src="./images/dice1.png"></div>
+                        </div>
+                    </div>    
+                </div>
+
+                <!-- Selected Dice/Round Score -->
+                <div class="sideContainer col-2 col-lg-2" id="scoreBox">
+                    <div id="scorekeeper">Score: <span>0</span></div>    
+
+                    <div id="selected-dice">
+                        <div id="selected-dice0"></div>
+                        <div id="selected-dice1"></div>
+                        <div id="selected-dice2"></div>
+                        <div id="selected-dice3"></div>
+                        <div id="selected-dice4"></div>
+                        <div id="selected-dice5"></div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="col" id="scoringKey">
+            <h3>Scoring Key</h3>
+            <div id="scoringKey-col-container">
+                <div class="scoringKey-col" id="scoringKey-col1">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item dice-li" id="one_5">
+                            <img src="images/dice5.png" alt=""><span>50 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="one_1">
+                            <img src="images/dice1.png" alt=""><span>100 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="three_1">
+                            <img src="images/dice1.png" alt="">
+                            <img src="images/dice1.png" alt=""> 
+                            <img src="images/dice1.png" alt=""><span>300 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="three_2">
+                            <img src="images/dice2.png" alt="">
+                            <img src="images/dice2.png" alt=""> 
+                            <img src="images/dice2.png" alt=""><span>200 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="three_3">
+                            <img src="images/dice3.png" alt="">
+                            <img src="images/dice3.png" alt=""> 
+                            <img src="images/dice3.png" alt=""><span>300 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="three_4">
+                            <img src="images/dice4.png" alt="">
+                            <img src="images/dice4.png" alt=""> 
+                            <img src="images/dice4.png" alt=""><span>400 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="three_5">
+                            <img src="images/dice5.png" alt="">
+                            <img src="images/dice5.png" alt=""> 
+                            <img src="images/dice5.png" alt=""><span>500 pts</span> 
+                        </li>
+                        <li class="list-group-item dice-li" id="three_6">
+                            <img src="images/dice6.png" alt="">
+                            <img src="images/dice6.png" alt=""> 
+                            <img src="images/dice6.png" alt=""><span>600 pts</span> 
+                        </li>
+                    </ul>
+                </div>
+                <div class="scoringKey-col" id="scoringKey-col2">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item dice-li" id="four_kind">
+                            <span>4 of a Kind : 1,000 pts</span>
+                        </li>
+                        <li class="list-group-item dice-li" id="five_kind">
+                            <span>5 of a Kind : 2,000 pts</span>
+                        </li>
+                        <li class="list-group-item dice-li" id="six_kind">
+                            <span>6 of a Kind : 3,000 pts</span>
+                        </li>
+                        <li class="list-group-item dice-li" id="three_pairs">
+                            <span>Three Pairs : 1,500 pts</span>
+                        </li>
+                        <li class="list-group-item dice-li" id="four_kind_pair">
+                            <span>4 of a Kind & a Pair : 1,500 pts</span>
+                        </li>
+                        <li class="list-group-item dice-li" id="two_triplets">
+                            <span>Two Triplets : 1,500 pts</span>
+                        </li>
+                        <li class="list-group-item dice-li" id="straight-li">
+                            <img src="images/dice1.png" alt="">
+                            <img src="images/dice2.png" alt="">
+                            <img src="images/dice3.png" alt="">
+                            <img src="images/dice4.png" alt="">
+                            <img src="images/dice5.png" alt=""> 
+                            <img src="images/dice6.png" alt="">
+                            <div>1,500 pts</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="row accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Instructions
+                </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <h2>Farkle Rules</h2>
+                    <p>FARKLE is a push-your-luck game in which the objective is to be the first player to accumulate 10.000 points. The play is passed back and forth as players attempt to gather point-scoring melds while evaluating if the risk of rolling a farkle and losing all unbanked points is worth the lure of getting just a few more points. As with many games Farkle is played in numerous regions with dozens of variations. The version we have here is among the simpler ones, and only includes the standard melds common to most variations we could find.</p>
+                    
+                    <h2>Gameplay</h2>
+                    Rolling, scoring, banking
+                    The game is played with six dice. A player starts their turn by throwing all six dice. Once the dice have been rolled the player may put aside any dice that form scoring melds (see melds below). A player must put aside at least one scoring die each throw, but beyond that is free in what dice they put aside or throw again.
+                    
+                    Players may now roll any remaining dice not already put aside in hopes of being able to make more melds, risking the chance of farkling (see below) and scoring nothing. Players who decide not to take that risk can instead bank. When a player banks any points earned during the round are added to the grand total and are safe for the rest of the game. The player's turn ends and they pass all dice to their opponent who takes their turn.
+                    
+                    All dice in a meld must come from one throw
+                    Melds do not carry over between throws. If you score two ones in one throw and set them aside throwing a one in the next throw does not mean you have three ones, it means you have a set of two ones worth 200, and a separate set of one worth 100 for a total of 300. Any formed melds must contain dice obtained from a single throw.
+                    
+                    <h4>Farkling</h4>
+                    If there are no melds on the table after a player throws their dice they have "farkled". When a player farkles their turn is over, play passes to their opponent, and any unbanked points earned during the round are lost. With every throw the odds of farkling grow higher, and the player risks more and more points in the process. The key of the game comes in finding when you should risk the farkle and throw again, and when you should call it quits and bank your points.
+                                        
+                    <h4>Game</h4>
+                    The game ends once either player ends their turn with more than 10.000 points banked. The game doesn't automatically end your turn when you hypothetically reach the threshold, because we've found it to be more fun to manually bank for the win and in the cases were we want to see how far we can push our already sizable lead. However once you find that banking will lead to you winning we recommend doing so, unless you just want to show off to Bill.                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script type="module"  src="Javascript/main.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
