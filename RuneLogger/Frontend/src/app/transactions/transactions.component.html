@@ -1,0 +1,39 @@
+<div>
+  <ion-button type="button" class="btn btn-dark" routerLink="/" routerLinkActive="active"><< Return</ion-button>
+</div>
+
+<h5>Transactions: {{id}}</h5>
+
+<table style="width:100%">
+  <thead>
+    <td style="width:5%">ID</td>
+    <td style="width:10%">Type</td>
+    <td style="width:25%">Name</td>
+    <td style="width:15%">Price</td>
+    <td style="width:15%">Quantity</td>
+    <td style="width:10%">Total</td>
+    <td class="buttons" style="width:20%; border: none"></td>
+  </thead>
+    <tr *ngFor="let transaction of transactions">
+      <td style="width:5%">{{transaction.transId}}</td>
+      <td style="width:10%">{{transaction.type}}</td>
+      <td style="width:25%">
+        <span [hidden]="!edit">{{transaction.name}}</span>
+        <span [hidden]="edit"><input type="text" value={{transaction.name}} [(ngModel)]="transaction.name"></span>
+      </td>
+      <td style="width:15%">
+        <span [hidden]="!edit">{{transaction.price | number}}</span>
+        <span [hidden]="edit"><input type="text" value={{transaction.price}} [(ngModel)]="transaction.price"></span>
+      </td>
+      <td style="width:15%">
+          <span [hidden]="!edit">{{transaction.quantity | number}}</span>
+          <span [hidden]="edit"><input type="text" value={{transaction.quantity}} [(ngModel)]="transaction.quantity"></span>
+      </td>
+      <td style="width:10%">{{transaction.quantity*transaction.price | number}}</td>
+      <td class="buttons">
+        <ion-button [hidden]="!edit" (click)="editTransaction()" [routerLink]="['/transactions/',transaction.name, transaction.transId]">Edit</ion-button>
+        <ion-button [hidden]="edit" (click)="saveTransaction(transaction)">Save</ion-button>
+        <ion-button [hidden]="edit" (click)="deleteTransaction(transaction.transId)">Delete</ion-button>
+      </td>
+    </tr>
+</table>

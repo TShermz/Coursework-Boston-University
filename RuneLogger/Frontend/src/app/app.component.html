@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title routerLink="/">
+      RuneLogger
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" id="form">
+        <app-add-transaction></app-add-transaction>
+      </ion-col>
+      <ion-col size="8" class="table">
+        <router-outlet></router-outlet>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

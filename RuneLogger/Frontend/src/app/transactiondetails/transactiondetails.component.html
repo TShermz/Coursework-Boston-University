@@ -1,0 +1,43 @@
+<div id="return">
+  <ion-button type="button" class="btn btn-dark" [routerLink]="['/transactions/', transaction.name]" routerLinkActive="active"><< Return</ion-button>
+</div>
+
+<h3>Update Transaction: #{{transaction.transId}}</h3>
+<div id="form" [hidden]="submitted">
+    <form #addTransactionForm="ngForm">
+      <ion-list>
+      <div class="form-group">
+        <ion-item>
+          <ion-input required minlength="1" type="text" id="name" name="name"
+            placeholder="Name" [(ngModel)]="transaction.name" pattern="[a-zA-Z0-9 ]{2,35}"></ion-input>
+        </ion-item>   
+      </div>
+
+      <div class="form-group">
+        <ion-item>
+          <ion-input required minlength="1" type="number" id="price" name="price"
+            placeholder="Price" [(ngModel)]="transaction.price"></ion-input>
+        </ion-item>   
+      </div>
+
+      <div class="form-group">
+        <ion-item>
+          <ion-input required minlength="1" type="number" id="quantity" name="quantity"
+            placeholder="Quantity" [(ngModel)]="transaction.quantity"></ion-input>
+        </ion-item>   
+      </div>
+    </ion-list>
+      
+      <div class="btn-group btn-group-sm">
+        <ion-button id="submit" type="submit" class="btn btn-primary" (click)="update();" expand="block" fill="clear" shape="round">Submit</ion-button>
+        <ion-button id="delete" type="submit" class="btn btn-primary" (click)="delete();" expand="block" fill="clear" shape="round">Delete</ion-button>   
+      </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{transaction.name}}</span></p>
+	<div class="btn-group btn-group-sm">
+    	<ion-button type="button" class="btn btn-dark" [routerLink]="['/transactions/', transaction.name]">Continue</ion-button>
+    </div>
+</div>

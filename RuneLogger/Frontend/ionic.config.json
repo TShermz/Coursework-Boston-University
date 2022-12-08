@@ -1,0 +1,7 @@
+{
+  "name": "runeLogger",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,18 @@
+#form, .table {
+    background-color: antiquewhite;
+    border-radius: 2rem;
+    color: black;
+    margin: 0 1rem 0 1rem;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    height: 20rem;
+}
+
+#items {
+    padding: 0 1rem 0 1rem;
+    width: 100%;
+    height: auto;
+}
