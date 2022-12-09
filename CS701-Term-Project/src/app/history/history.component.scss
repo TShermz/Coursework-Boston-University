@@ -1,0 +1,48 @@
+.container {
+    width: 100%;
+    background-color: grey;
+    padding-top: 1rem;
+    border-radius: 1rem;
+}
+
+h3 {
+    text-align: center;
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+}
+table{
+    table-layout: fixed;
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+}
+table, th, td {
+    border: black 2px solid;
+}
+
+.ascend {
+    background-color: rgb(240, 204, 204);
+}
+
+.descend {
+    background-color: rgb(202, 245, 202);
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    width: 33%;
+}
+
+th:hover {
+    background-color: #D2D2D2;
+}
+
+tbody tr:hover {
+    background-color: gold;
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <h3 *ngIf="!item">No Item Selected</h3>
+  <h3 *ngIf="item">{{item.name}}</h3>
+
+  <div *ngIf="item">
+    <table class="table table-hover" id="transactions">
+      <tr>
+        <th>Date</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Spent</th>
+      </tr>
+      <tr *ngFor="let transaction of transactions  | filterNames: item.name" [class]='setClass(transaction)' >
+        <td>{{transaction.date}}</td>
+        <td>{{transaction.type | uppercase}}</td>
+        <td>{{transaction.quantity | number }}</td>
+        <td>{{transaction.price | number}}</td>
+        <td>{{transaction.total | number}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "name": "runescapeLogger",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

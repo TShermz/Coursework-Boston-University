@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6" id="uniques">
+      <h3>Recorded Transactions</h3>
+      <table class="table">
+        <tr>
+          <th (click)="changeSort('name')" id="name" [class]="setClass('name')">Name</th>
+          <th (click)="changeSort('totalTransactions')" id="totalTransactions" [class]="setClass('totalTransactions')">Transactions</th>
+          <th (click)="changeSort('totalPurchased')" id="totalPurchased" [class]="setClass('totalPurchased')">Quantity Purchased</th>
+          <th (click)="changeSort('totalSold')" id="totalSold" [class]="setClass('totalSold')">Quantity Sold</th>
+          <th (click)="changeSort('profit')" id="profit" [class]="setClass('profit')">Profit</th>
+        </tr>
+        <tbody>
+          <tr class="transaction" *ngFor="let item of statistics | sortName: property: sort" (click)="onSelect(item)">
+            <td [class]="setClass('name')">{{item.name}}</td>
+            <td [class]="setClass('totalTransactions')">{{item.totalTransactions | number}}</td>
+            <td [class]="setClass('totalPurchased')">{{item.totalPurchased | number}}</td>
+            <td [class]="setClass('totalSold')">{{item.totalSold | number}}</td>
+            <td [class]="setClass('profit')">{{item.profit | number}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input type="button" (click)="clearStorage()" value="Clear">
+    </div>
+    <div class="col-6">
+      <app-history-detail [item]="selectedItem"></app-history-detail>
+    </div>
+  </div>
+</div>
+

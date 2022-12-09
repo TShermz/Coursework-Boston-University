@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      [Runescape Logger] Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <h1>Welcome to Runescape Logger!</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="9" id="test">
+        <app-summary></app-summary>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <app-submissions></app-submissions>
+      </ion-col>
+      <ion-col size="12">
+        <app-history></app-history>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,29 @@
+{
+  "name": "runescapelogger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular-devkit/architect": "^0.1303.3",
+    "@angular/core": "^13.3.4",
+    "@angular/platform-browser-dynamic": "^13.3.4",
+    "@ionic/angular": "^6.1.2",
+    "@ionic/angular-toolkit": "^6.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^12.0.2",
+    "@popperjs/core": "^2.11.5",
+    "angular": "^1.8.3",
+    "bootstrap": "^5.1.3",
+    "ionic": "^5.4.16",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^13.3.3",
+    "@types/jest": "^27.4.1"
+  }
+}

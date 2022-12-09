@@ -1,0 +1,37 @@
+.container {
+    background-color: white;
+    padding-bottom: 1rem;
+    border-radius: 1rem;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+#transactions {
+    width: 100%;
+    background-color: white;
+    margin: 0 5% 0 0;
+}
+
+#transactions th {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 36px;
+}
+td{
+    text-align: center;
+}
+
+tr{
+    border: black 1px solid;
+}
+
+.purchase {
+    background-color: rgb(247, 189, 189);
+}
+
+.sale {
+    background-color: rgb(207, 239, 207);
+}
+
